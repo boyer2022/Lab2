@@ -13,28 +13,33 @@ class Author:
             self.books.append(title)
         else:
             print(f'{title} is in the list already. Please reenter a book title.')
-# TODO 
-
+       # Concatination string to send to main 
     def __str__(self):
+        # Empty list check
         titles = ', '.join(self.books) or 'No published books'
+        # Formatted string object
         return f'{self.name}. Books: {titles}'
 
 def main():
-    # author_input = input('Enter an author: ')
+    # User input for Author
+    author_input = input('Enter an author: ')
 
-    # author = Author(author_input)
-    # author.publish = input(f'Enter a name of the book for {author_input}: ')
-    """ Using user input works but still displays NO PUBLISHED BOOKS """
-    
-    tolkien = Author('J.R.R. Tolkien')
-    tolkien.publish('The Fellowship of the Rings')
-    tolkien.publish('The Two Towers')
-    tolkien.publish('The Return of the King')
-    tolkien.publish('The Hobbit')
-    tolkien.publish('The Hobbit')
-    
-    print(tolkien)
-    # print(author)
-
+    # Call for Author class with user input
+    author = Author(author_input)
+    author.publish(input(f'Enter a name of the book for {author_input}: '))
+        # Enter more data to books[]
+    question = input('Would you like to enter another book? Enter to quit.')
+    # While loop as long as user inputs 'y'
+    while question:
+        # Calls publish function in Author class to append book title and add to book[]
+        author.publish(input(f'Enter a name of the book for {author_input}: '))
+        # Restate question for more titles
+        question = input('Would you like to enter another book? Enter to quit.')
+   
+   # prints __str__ function formatted string
+    print(author)
+# Call to main
 main()
+# Output to user that program has stopped running
 print('End of program, Thank you')
+""" I am so happy with this! I was able to figure out how to loop a question to the user, only based on the example in the videos! """

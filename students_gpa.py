@@ -22,7 +22,7 @@ def main():
     # Add input to get variables from user
     student_name = input('Enter students name: ')
     student_college_id = input(f'Enter {student_name}\'s Student ID: ')
-    student_gpa = float(input(f'Enter {student_name}\'s GPA: ')) 
+    student_gpa = input(f'Enter {student_name}\'s GPA: ')
 
 
 # Renaming Variables to (s), calling on Student class to assign variables to open 
